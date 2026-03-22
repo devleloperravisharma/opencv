@@ -6,6 +6,7 @@ import os
 path_haarcascade = "C:/Users/Ravis/Documents/Riddhima/open CV/face recognition/haarcascade_frontalface_default.xml"
 path_data_sets = "C:/Users/Ravis/Documents/Riddhima/open CV/face recognition/data sets !"
 path_mimi = "C:/Users/Ravis/Documents/Riddhima/open CV/face recognition/data sets !/mimi"
+# js change the path on "path mimi" to be the 'mumma' folder so that mumma can be included in the face recognition thingy !!
 
 path = os.path.join(path_data_sets, path_mimi)
 
@@ -25,4 +26,8 @@ for i in range(30):
       cv2.rectangle(img, (x,y), (x+w, y+h), (2, 9, 79), 3)
       cropped_face = grayscale_image[y : y + h, x : x + w]
       resized_cropped_face = cv2.resize(cropped_face, (WIDTH, HEIGHT))
-      cv2.imwrite("%s/%s.png", (path, i), resized_cropped_face)
+      cv2.imwrite("%s/%s.png"% (path, i), resized_cropped_face)
+   cv2.imshow("wowie", img)
+   key = cv2.waitKey(10)
+   if key == 27:
+      break
