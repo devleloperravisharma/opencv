@@ -10,3 +10,10 @@ images = []
 labels = []
 
 namess = {}
+
+id = 0
+
+for (subdir, dir, files) in os.walk(path_data_sets):
+    for subdir in dir:
+        namess[id] = subdir
+        
