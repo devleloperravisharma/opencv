@@ -13,7 +13,7 @@ path = os.path.join(path_data_sets, path_mimi)
 WIDTH = 500
 HEIGHT = 350
 
-var_cascade_classifier = cv2.CascadeClassifier(path_haarcascade)
+var_cascade_classifier = cv2.CascadeClassifier(path_haarcascade)  # **
 var_webcam = cv2.VideoCapture(0)
 # if external cam put 1
 
@@ -25,7 +25,7 @@ for i in range(30):
    for (x,y,w,h) in var_face:
       cv2.rectangle(img, (x,y), (x+w, y+h), (2, 9, 79), 3)
       cropped_face = grayscale_image[y : y + h, x : x + w]
-      resized_cropped_face = cv2.resize(cropped_face, (WIDTH, HEIGHT))
+      resized_cropped_face = cv2.resize(cropped_face, (WIDTH, HEIGHT)) # **
       cv2.imwrite("%s/%s.png"% (path, i), resized_cropped_face)
    cv2.imshow("wowie", img)
    key = cv2.waitKey(10)
